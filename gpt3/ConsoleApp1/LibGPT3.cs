@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http;
+﻿using System.Text;
 using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-
 
 namespace gpt3
 {
@@ -24,7 +14,7 @@ namespace gpt3
         public LibGPT3() 
         {
             apiUrl = "https://api.openai.com/v1/chat/completions";
-            apiKey = "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";
+            apiKey = "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";
             model  = "gpt-3.5-turbo"; // Specify the desired model version
             // Create an instance of HttpClient
             client = new HttpClient();
@@ -54,7 +44,7 @@ namespace gpt3
             var responseOne = responseObject.Last.ToString();
             var finalResponse = responseOne.Split("content")[1].Split('}')[0];
             
-            return finalResponse.Split(":")[1];
+            return finalResponse;
         }
 
 
