@@ -1,6 +1,8 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Linq;
+using System.Threading;
 
 namespace gpt3
 {
@@ -10,14 +12,17 @@ namespace gpt3
         string apiUrl = string.Empty;
         string apiKey = string.Empty;
         string model = string.Empty; 
+        internal string mainTask = string.Empty;
+        internal string label = string.Empty;
         HttpClient? client;
         public LibGPT3() 
         {
             apiUrl = "https://api.openai.com/v1/chat/completions";
-            apiKey = "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";
+            apiKey = "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";
             model  = "gpt-3.5-turbo"; // Specify the desired model version
             // Create an instance of HttpClient
             client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
         }
 
         public async Task<string> SendChatRequest(string message = "hello")
@@ -30,23 +35,59 @@ namespace gpt3
             };
             // Serialize the request data
             var content = new StringContent(JsonConvert.SerializeObject(requestData), new UTF8Encoding(false), "application/json");
-
             // Add the API key to the request headers
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
-
             // Send the request and get the response
             var response = await client.PostAsync(apiUrl, content);
-
             // Read the response content
             var responseContent = await response.Content.ReadAsStringAsync();
-            // Parse the response content as a JSON object
-            JObject responseObject = JObject.Parse(responseContent);
-            var responseOne = responseObject.Last.ToString();
-            var finalResponse = responseOne.Split("content")[1].Split('}')[0];
-            
-            return finalResponse;
+            // Parse the response content as a JSON object, and then to a string to have only the IA response.
+            return this.ParseJObject(JObject.Parse(responseContent));
         }
 
+        internal void MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("What would you like to do?\n1-Translate.\n2-Grammar checker.\n3-Python expert.\n4-General propose.");
+            Console.Write("your answer -> ");
+            var userInput = Console.ReadLine();
+            if (userInput.Contains("1"))
+            {
+                mainTask = "Translate ";
+                label = "[Translation] ";
+            }
+            else if (userInput.Contains("2"))
+            {
+                mainTask = "Check the grammar of: ";
+                label = "[Grammar] ";
+            }
+            else if (userInput.Contains("3"))
+            {
+                mainTask = "As python expert: ";
+                label = "[Phyton] ";
+            }
+            else if (userInput.Contains("4"))
+            {
+                mainTask = "";
+                label = "[General] ";
+            }
+            else if (userInput.Contains("exit"))
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Chose a correct one !!!");
+                Thread.Sleep(1500);
+                this.MainMenu();
+            }
 
+        }
+        private string ParseJObject(JObject json_object)
+        {
+            Dictionary<string,JToken> responseDict = json_object.ToObject<Dictionary<string,JToken>>();
+            Dictionary<string, object> choice = responseDict["choices"][0].ToObject<Dictionary<string, object>>();
+            JObject ia_msg = JObject.Parse(choice["message"].ToString());
+            return ia_msg["content"].ToString().Replace("\n", "").Replace("\"", "");
+        }
     }
 }

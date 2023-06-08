@@ -15,41 +15,32 @@ class Program
         // Create the GPT3 object from LibGPT3 module.
         LibGPT3 gpt3 = new LibGPT3();
 
-        Console.WriteLine("What would you like to do?\n1-Translate.\n2-Grammar checker.\n3-Python expert.\n4-General propose.");
-        var userInput = Console.ReadLine();
-        string mainTask = string.Empty;
-        string label = string.Empty;
-        if (userInput.Contains("1"))
-        {
-            mainTask = "Translate ";
-            label = "[Translation] ";
-        }
-        else if (userInput.Contains("2"))
-        {
-            mainTask = "Check the grammar of: ";
-            label = "[Grammar] ";
-        }
-        else if (userInput.Contains("3"))
-        {
-            mainTask = "As python expert: ";
-            label = "[Phyton] ";
-        }
-        else
-        {
-            mainTask = "";
-            label = "[General] ";
-        }
+        await bucleAsync();
 
-        Console.Write($"{label}Send mesage --> ");
-        var userMsg = Console.ReadLine();
-        string userMessage = string.Format("{0}'{1}'", mainTask, userMsg);
-        Console.WriteLine($"You are sending ----> {userMessage}");
-        // Call the SendChatRequest method
-        string response = await gpt3.SendChatRequest(userMessage);
+        async Task bucleAsync()
+        {
+            gpt3.MainMenu();
+            Console.Clear();
+            Console.Write($"{gpt3.label}Send mesage --> ");
+            var userMsg = Console.ReadLine();
+            do
+            {
+                if(userMsg == "clear")
+                {
+                    Console.Clear();
+                }
+                string userMessage = string.Format("{0}'{1}'", gpt3.mainTask, userMsg);
+                // Call the SendChatRequest method
+                string response = await gpt3.SendChatRequest(userMessage);
+                // Print the API response
+                Console.WriteLine($"IA response:\n{response}");
+                Console.Write("\n");
+                Console.Write($"{gpt3.label}Send mesage --> ");
+                userMsg = Console.ReadLine();
+            } while (userMsg != "exit");
 
-        // Print the API response
-        Console.WriteLine(response);
+            await bucleAsync();
 
-        Console.ReadKey();
+        }
     }
-}
+} 
