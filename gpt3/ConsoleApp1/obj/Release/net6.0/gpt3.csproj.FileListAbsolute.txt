@@ -1,0 +1,17 @@
+D:\Git\gpt3\gpt3\ConsoleApp1\bin\Release\net6.0\gpt3.exe
+D:\Git\gpt3\gpt3\ConsoleApp1\bin\Release\net6.0\gpt3.deps.json
+D:\Git\gpt3\gpt3\ConsoleApp1\bin\Release\net6.0\gpt3.runtimeconfig.json
+D:\Git\gpt3\gpt3\ConsoleApp1\bin\Release\net6.0\gpt3.dll
+D:\Git\gpt3\gpt3\ConsoleApp1\bin\Release\net6.0\gpt3.pdb
+D:\Git\gpt3\gpt3\ConsoleApp1\bin\Release\net6.0\Newtonsoft.Json.dll
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.csproj.AssemblyReference.cache
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.AssemblyInfoInputs.cache
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.AssemblyInfo.cs
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.csproj.CoreCompileInputs.cache
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.csproj.CopyComplete
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.dll
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\refint\gpt3.dll
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.pdb
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\gpt3.genruntimeconfig.cache
+D:\Git\gpt3\gpt3\ConsoleApp1\obj\Release\net6.0\ref\gpt3.dll
