@@ -1,8 +1,6 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-using System.Threading;
 
 namespace gpt3
 {
@@ -18,7 +16,7 @@ namespace gpt3
         public LibGPT3() 
         {
             apiUrl = "https://api.openai.com/v1/chat/completions";
-            apiKey = "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";
+            apiKey = "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";
             model  = "gpt-3.5-turbo"; // Specify the desired model version
             // Create an instance of HttpClient
             client = new HttpClient();
@@ -47,8 +45,8 @@ namespace gpt3
         internal void MainMenu()
         {
             Console.Clear();
-            Console.WriteLine("What would you like to do?\n1-Translate.\n2-Grammar checker.\n3-Python expert.\n4-General propose.");
-            Console.Write("your answer -> ");
+            Console.WriteLine("What would you like to do?\n1-Translate.\n2-Grammar checker.\n3-Python expert.\n4-Dictionary.\n5-General propose.");
+            Console.Write("\nPutn the number of your answer -> ");
             var userInput = Console.ReadLine();
             if (userInput.Contains("1"))
             {
@@ -66,6 +64,11 @@ namespace gpt3
                 label = "[Phyton] ";
             }
             else if (userInput.Contains("4"))
+            {
+                mainTask = "Explain me, give synonyms and examples of the word: ";
+                label = "[Dictionary] ";
+            }
+            else if (userInput.Contains("5"))
             {
                 mainTask = "";
                 label = "[General] ";
