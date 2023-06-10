@@ -1,12 +1,4 @@
-﻿using System.Net.Http;
-using System.Text;
-using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using gpt3;
+﻿using gpt3;
 
 class Program
 {
@@ -29,18 +21,20 @@ class Program
                 {
                     Console.Clear();
                 }
-                string userMessage = string.Format("{0}'{1}'", gpt3.mainTask, userMsg);
-                // Call the SendChatRequest method
-                string response = await gpt3.SendChatRequest(userMessage);
-                // Print the API response
-                Console.WriteLine($"IA response:\n{response}");
+                else
+                {
+                    string userMessage = string.Format("{0}'{1}'", gpt3.mainTask, userMsg);
+                    // Call the SendChatRequest method
+                    string response = await gpt3.SendChatRequest(userMessage);
+                    // Print the API response
+                    Console.WriteLine($"\nIA response:\n{response}");
+                }
                 Console.Write("\n");
                 Console.Write($"{gpt3.label}Send mesage --> ");
                 userMsg = Console.ReadLine();
             } while (userMsg != "exit");
 
             await bucleAsync();
-
         }
     }
 } 

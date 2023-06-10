@@ -2,14 +2,19 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>gpt3_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Program.cs~RF7b5c6fc.TMP" />
     <None Remove="Program.cs~RFd1ad42e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="gpt3_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
