@@ -1,0 +1,109 @@
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+
+# Build output
+/bin/
+/obj/
+
+# NuGet packages
+/packages/
+
+# User-specific files
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+*.cache
+*.log
+*.vspscc
+*.vssscc
+BuildVersionIncrement.txt
+UpgradeLog*.XML
+UpgradeLog*.htm
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.htm
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Roslyn cache directories
+*.ide/
+
+# GhostDoc plugin settings
+*.GhostDoc.xml
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# Xamarin-specific
+*.iOSBuild/
+*.iOSBundle/
+
+# Unity-specific
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+
+# Rider-specific
+.idea/
+*.sln.iml
+
+# Resharper-specific
+_ReSharper*/
+
+# NLog
+[Nn]Log/
+
+# DotCover
+*.dotCover
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+# Build Azure
+/ppWebApp/
+
+# Windows Azure Build Output
+csx/
+*.build.csdef
+
+# MyGet
+.mg/
+
+# Azure Stream Analytics local run configuration file
+ASALocalRun.xml
+
+# MSBuild Binary and Structured Log
+*.binlog
+
+# Blazor WebAssembly
+/wwwroot/_framework/
+
+# Compiled WebAssembly output
+*.wasm
+*.wasm.gz
+
+# Template directories
+Templates/
+

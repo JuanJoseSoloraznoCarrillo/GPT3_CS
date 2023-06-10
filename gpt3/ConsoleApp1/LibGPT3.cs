@@ -16,7 +16,7 @@ namespace gpt3
         public LibGPT3() 
         {
             apiUrl = "https://api.openai.com/v1/chat/completions";
-            apiKey = "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";
+            apiKey = "PUT YOUR API KEY HERE!!!";
             model  = "gpt-3.5-turbo"; // Specify the desired model version
             // Create an instance of HttpClient
             client = new HttpClient();
