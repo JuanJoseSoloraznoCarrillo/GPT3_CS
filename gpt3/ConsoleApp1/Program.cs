@@ -1,14 +1,21 @@
-﻿using gpt3;
+﻿/**
+    * Author: Solorzano, Juan Jose.
+    * Date: 2021-07-14
+    * This is a simple example of how to use the GPT-3 API with C#.
+    * This code is based on the OpenAI official documentation.
+    * https://beta.openai.com/docs/guides/quickstart/
+-----------------------------------------------------------------------------
+    Usage: dotnet run
+    * The program will ask you to enter a message to send to the GPT-3 API.
+*/
+using gpt3;
 
-class Program
-{
-    static async Task Main(string[] args)
-    {
+class Program{
+    static async Task Main(string[] args){
         // Create the GPT3 object from LibGPT3 module.
         LibGPT3 gpt3 = new LibGPT3();
 
         await bucleAsync();
-
         async Task bucleAsync()
         {
             gpt3.MainMenu();

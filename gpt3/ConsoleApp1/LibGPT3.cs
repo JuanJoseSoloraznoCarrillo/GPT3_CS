@@ -1,4 +1,17 @@
-﻿using System.Text;
+﻿/**
+ * This is a simple C# console application that uses the OpenAI GPT-3 API to chat with the user.
+ * The application sends a message to the API and receives a response.
+ * The user can choose the main task of the conversation.
+ * The application uses the Newtonsoft.Json library to parse the JSON response from the API.
+ * The application uses the System.Net.Http library to send the HTTP request to the API.
+ * The application uses the System.Threading library to pause the execution of the program.
+ * The application uses the System library to clear the console screen.
+ * The application uses the System.Collections.Generic library to work with dictionaries.
+ * The application uses the System.Text library to work with strings.
+ * The application uses the System.Threading.Tasks library to work with asynchronous tasks.
+ */
+
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
